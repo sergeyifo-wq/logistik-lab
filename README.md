@@ -3,10 +3,11 @@
 Visueller Selbstlernkurs für **Grundlagen der Logistik / BLTM1 GLOG**. Die Gestaltung greift industrielle Typografie und Raster von [Brass Hands](https://brasshands.com/) auf und verbindet sie mit dunklen Flächen, Orange, Cyan und Lime. Alle Grafiken sind eigens erstellt.
 
 - 12 geführte Module, 92 Erklärbausteine und Glossarbegriffe
+- Lernpfad wahlweise ausführlich oder kompakt: alle 92 Themen, gemeinsame Notizen und Fortschrittsmarkierungen, gespeicherte Moduswahl
 - 92 animierte Lernkarten mit lokaler Wiederholungsplanung
-- 6 animierte MP4-Erklärfilme à 32 Sekunden mit eingeblendeten Erklärungen, ohne Ton; optionales browserbasiertes Vorlesen
+- 6 animierte MP4-Erklärfilme à 32 Sekunden mit eingeblendeten Erklärungen, ohne Ton; Kapitelwahl, getrennte Steuerung, große synchronisierte Erklärung und optionales browserbasiertes Vorlesen
 - 51 Testfragen mit Begründungen und Quellverweisen
-- Training und 20-Fragen-Probetest mit 20-Minuten-Timer
+- Training und 20-Fragen-Probetest mit 20-Minuten-Timer; während derselben geöffneten Sitzung nach Navigation fortsetzbar, ohne Neustart der Frist
 - 8 Labore: Netzwerke, Bestände, EOQ, ABC/XYZ, Lager, Kommissionieren, Kapital und Rechenfälle
 - Transferfragen, lokale Notizen, Fortschrittsexport und -import
 
@@ -22,7 +23,7 @@ Dies ist ein statischer Passwortschutz, keine serverseitige Anmeldung. Jeder kan
 
 ## Lokaler Quellcode
 
-Die vollständige bearbeitbare Sicherung enthält `course.js`, `questions.js`, `videos.js`, `math.js`, `labs.js`, `app.js`, `styles.css`, `gate.html`, `media/`, `build.mjs` und `verify.mjs`. Diese unverschlüsselten Kursquellen bleiben in der persönlichen lokalen Sicherung und werden nicht in das öffentliche Repository geladen.
+Die vollständige bearbeitbare Sicherung enthält `course.js`, `questions.js`, `learning.js`, `experience.js`, `videos.js`, `math.js`, `labs.js`, `app.js`, `styles.css`, `gate.html`, `media/`, `build.mjs` und `verify.mjs`. Diese unverschlüsselten Kursquellen bleiben in der persönlichen lokalen Sicherung und werden nicht in das öffentliche Repository geladen.
 
 Mit Node.js 20 oder neuer:
 

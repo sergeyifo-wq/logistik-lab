@@ -2,6 +2,25 @@
 
 Geprüft am 16. Oktober 2026. Die Prüfung bezieht sich auf die hier gespeicherte Ausgabe. Die Website ist ein didaktisch aufbereiteter Selbstlernkurs; sie ist keine offizielle Prüfungsfreigabe.
 
+## Relaxing / Hub Runner
+
+Der neue achte Navigationstab enthält einen eigenständigen Endless Runner mit ursprünglichen Canvas-Grafiken im Design der Lernseite. Die laufende Spielrunde ist von Lernnotizen, Moduswahl und Prüfungsfortschritt getrennt.
+
+`node verify-runner.mjs`: **31 Spielprüfungen bestanden**, zusätzlich zu den 315 Kursprüfungen. Geprüft werden Start, Spurgrenzen, Spurwechsel, Sprung- und Duckdauer, passend überwindbare Hindernisse, nicht überspringbare Gabelstapler, verfehlte und einmalig eingesammelte Pakete, Schutzzeit nach Treffern, Spielende, Pause/Fortsetzung, ungültige Zeitwerte und Kollisionen bei langsamen Frames. 2.000 generierte Hindernisreihen enthalten stets mindestens eine hindernisfreie Spur und eine passende Paketspur. Zwei Läufe über je fünf simulierte Minuten prüfen beide Modi bei steigender Geschwindigkeit auf Spielbarkeit, begrenzte Objektanzahl und eingehaltene Maximalgeschwindigkeit.
+
+Browserprüfung im Chromium-basierten In-App-Browser:
+
+- Der Relaxing-Tab und die direkte Route `#relax` öffnen das Spiel hinter dem vorhandenen Passwortzugang.
+- Echtes Spielen: Distanz steigt, Pakete werden eingesammelt, Treffer ziehen Schutzpunkte ab. Eine Testschicht endet mit 880 Punkten, vier Paketen und rund 290 Metern. Die Punktzahl ergibt sich aus `floor(2 × Distanz + 75 × Pakete)`.
+- Pause hält die angezeigte Distanz bei 187 m; Fortsetzen führt dieselbe Runde weiter. Tastatur und sichtbare Bildschirmtasten lösen Spielaktionen aus. P pausiert. Suche über `/` pausiert automatisch; Schließen der Suche lässt die Pause bestehen.
+- Fokusmodus zeigt das vollständige Spiel mit HUD und den vier Steuertasten. Vollbild lässt sich wieder verlassen.
+- Entspannt hat drei Schutzpunkte; Express einen. Nach Moduswechsel wird die jeweils eigene Bestleistung angezeigt. 880 Punkte bleiben nach vollständigem Neuladen und erneuter Entsperrung erhalten.
+- Ton kann über den ausdrücklich betätigten Schalter ein- und ausgeschaltet werden. Der Schalter meldet den Zustand über `aria-pressed`.
+- Menü und Steuerelemente bei 320, 390, 768, 1024 und 1440 px: keine horizontale Seitenüberbreite, keine gemessene Textüberbreite; Startmenü vollständig innerhalb des Spielfelds.
+- Rückkehr zum Lernpfad funktioniert und erhält die gespeicherte Kompaktwahl. Während der geprüften Wege keine Fehler oder Warnungen in der Browserkonsole.
+
+Grenzen: Wischgesten sind implementiert, wurden aber nicht auf einem physischen Touchgerät geprüft. Die Prüfung deckt keinen Browser mit Screenreader-Spielsteuerung oder jede Mobilbrowser-Vollbildvariante ab. Bestleistungen sind lokal und nicht Teil des Kursfortschrittexports.
+
 ## Überarbeitung nach allgemeiner QA
 
 - Überbreite langer Wörter wie „Logistikdienstleister“ bei 320 px behoben; Kopfzeile, Raster, Kennzahlen, Schaltflächen und Quellenangaben passen sich schmalen Ansichten an.

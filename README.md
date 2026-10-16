@@ -10,6 +10,7 @@ Visueller Selbstlernkurs für **Grundlagen der Logistik / BLTM1 GLOG**. Die Gest
 - Training und 20-Fragen-Probetest mit 20-Minuten-Timer; während derselben geöffneten Sitzung nach Navigation fortsetzbar, ohne Neustart der Frist
 - 8 Labore: Netzwerke, Bestände, EOQ, ABC/XYZ, Lager, Kommissionieren, Kapital und Rechenfälle
 - Transferfragen, lokale Notizen, Fortschrittsexport und -import
+- Relaxing-Tab mit **Hub Runner**: original gestalteter Logistik-Endless-Runner in einer Neon-Lagerhalle. Drei Spuren, Pakete, Paletten, Scannerbrücken und Gabelstapler; Entspannt/Express, Tastatur und Wischgesten, Bildschirmtasten, Pause, Fokusmodus, optionaler Synthesizer-Ton und lokale Bestleistungen je Modus.
 
 ## Inhalt und Quellen
 
@@ -23,12 +24,13 @@ Dies ist ein statischer Passwortschutz, keine serverseitige Anmeldung. Jeder kan
 
 ## Lokaler Quellcode
 
-Die vollständige bearbeitbare Sicherung enthält `course.js`, `questions.js`, `learning.js`, `experience.js`, `videos.js`, `math.js`, `labs.js`, `app.js`, `styles.css`, `gate.html`, `media/`, `build.mjs` und `verify.mjs`. Diese unverschlüsselten Kursquellen bleiben in der persönlichen lokalen Sicherung und werden nicht in das öffentliche Repository geladen.
+Die vollständige bearbeitbare Sicherung enthält `course.js`, `questions.js`, `learning.js`, `experience.js`, `videos.js`, `math.js`, `labs.js`, `app.js`, `styles.css`, `runner-engine.js`, `runner.js`, `runner.css`, `gate.html`, `media/`, `build.mjs`, `verify.mjs` und `verify-runner.mjs`. Diese unverschlüsselten Kursquellen bleiben in der persönlichen lokalen Sicherung und werden nicht in das öffentliche Repository geladen.
 
 Mit Node.js 20 oder neuer:
 
 ```powershell
 node verify.mjs
+node verify-runner.mjs
 $env:STUDY_PASSWORD = Read-Host 'Passwort für den neuen Build'
 node build.mjs
 Remove-Item Env:STUDY_PASSWORD
@@ -41,3 +43,11 @@ GitHub Pages: **Deploy from a branch → main → /(root)**. Bei Veröffentlichu
 ## Überprüfung
 
 Siehe `QA.md` für geprüfte Rechenwerte, Browserinteraktionen und Grenzen der Prüfung. Die Inhalte dienen dem selbstständigen Lernen und ersetzen keine offizielle Angabe zum Prüfungsumfang.
+
+## Hub Runner
+
+`←`/`→` oder A/D wechselt die Spur, `↑`/W/Leertaste springt, `↓`/S duckt sich. P/Esc und die Pausentaste halten die Runde an. Auf Touchgeräten werden Wischgesten und Antippen unterstützt; alternativ gibt es vier große Steuertasten. Fokus öffnet das gesamte Spielfeld mit Steuerung im Vollbild, sofern der Browser es unterstützt. Ton ist zunächst ausgeschaltet.
+
+Entspannt startet langsamer und mit drei Schutzpunkten, Express schneller mit einem. Jede Hindernisreihe lässt mindestens eine Spur vollständig frei. Pakete markieren eine sichere Spur durch die jeweilige Reihe. Bestleistungen werden unabhängig vom Lernfortschritt unter `logistik-lab-runner-v1` im Browser gespeichert. Sie sind nicht Teil des Lernstandexports. Ein Seitenwechsel beendet die aktuelle Spielrunde und sichert die Bestleistung; Pausieren hält die Runde in derselben geöffneten Ansicht. Beim Öffnen der Suche, Wechseln in einen anderen Browsertab oder Verlust des Fensterfokus pausiert das Spiel automatisch.
+
+Grafiken, Figuren, Animationen und kurze synthetische Töne sind eigens in Canvas/Web Audio erstellt. Das Spiel lädt keine Spielebibliothek, externen Spieleassets oder Werbeinhalte. Reduzierte Animationen schalten Partikel und zusätzliche Blitze aus; die Spielbewegung selbst bleibt erhalten.
